@@ -1,0 +1,39 @@
+<div class="homepage-container">
+  <header>
+    <button class="menu-button" (click)="toggleMenu()">&#9776;</button>
+    <h1>ASAPDROPS</h1>
+    <button class="cart-button">🔍 🛒</button>
+  </header>
+
+  <div class="hero-section">
+    <div class="hero-text">
+      <!-- Aquí va el contenido de tu imagen principal o texto -->
+    </div>
+  </div>
+
+
+
+  <div class="menu-overlay" *ngIf="menuOpen" (click)="toggleMenu()"></div>
+
+  <nav class="side-menu" [class.open]="menuOpen">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Shop</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+</div>
+
+<div class="card-container">
+  <button class="card">
+    <h2>ASAPDROPS</h2>
+  </button>
+
+  <button class="card">
+    <h2>EXCLUSIVE</h2>
+  </button>
+
+  <button class="card">
+    <h2>SUERTE AMERICANA</h2>
+  </button>
+</div>
