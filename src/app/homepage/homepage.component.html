@@ -1,32 +1,23 @@
 <div class="fondo">
 <div class="homepage-container">
   <header>
-    <button class="menu-button" (click)="toggleMenu()">&#9776;</button>
+    <app-sidenav></app-sidenav>
     <h1>ASAPDROPS</h1>
-    <button class="cart-button">🔍 🛒</button>
+    <button class="cart-button">🔍 </button>
   </header>
-
-  
   <div class="hero-container">
-    <img src='assets/zapas-fondo.jpg' alt="Hero Image" class="hero-image" />
+    <img src='assets/font-image.jpeg' alt="Hero Image" class="hero-image" />
     <div class="hero-overlay">
       <h2 class="hero-title">THE II BASKETBALL</h2>
       <button class="shop-button">SHOP</button>
+      
+
     </div>
   </div>
 
 
+  
 
-  <div class="menu-overlay" *ngIf="menuOpen" (click)="toggleMenu()"></div>
-
-  <nav class="side-menu" [class.open]="menuOpen">
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Shop</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
-</div>
 
 <div class="card-container">
   <button class="card">
@@ -42,4 +33,28 @@
   </button>
 </div>
 
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>Contacto</h3>
+        <p>Email:</p>
+        <p>Teléfono: +123 456 7890</p>
+    </div>
+    <div class="footer-section">
+      <h3>Ubicación</h3>
+      <p>123 Calle Principal</p>
+      <p>Ciudad, País</p>
+    </div>
+    <div class="footer-section">
+      <h3>Síguenos</h3>
+      <a href="https://www.instagram.com/asapdropsk23/#"> <i class="fa-brands fa-facebook"></i></a>
+      <a href="https://www.instagram.com/asapdropsk23/#"> <i class="fa-brands fa-x-twitter"></i></a>
+     <a href="https://www.instagram.com/asapdropsk23/#"> <i class="fa-brands fa-instagram"></i> </a>
+    </div>
+    <div class="footer-credits">
+      <p>© 2025 ASAPDROPS</p>
+      <p>Created by Galiasmu</p>
+    </div>
+  </div>
+</footer>
 </div>

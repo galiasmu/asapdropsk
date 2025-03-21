@@ -20,14 +20,13 @@ header {
 }
 
 .fondo {
-  background-image: url("/assets/zapas-fondo.jpg");
+  background-image: url("/assets/font-image.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   width: 100vw;
   height: 100vh;
 }
-
 
 .menu-button,
 .cart-button {
@@ -36,11 +35,12 @@ header {
   font-size: 1.5rem;
   color: white;
   cursor: pointer;
+  position: relative;
 }
 
 h1 {
   font-size: 1.5rem;
-  color: white;
+  color: #fff; /* Color de marca */
 }
 
 .hero-container {
@@ -78,22 +78,23 @@ h1 {
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 1rem;
+  color: #54a7d3; /* Color de marca */
 }
 
 .shop-button {
   background: transparent;
-  border: 2px solid white;
-  color: white;
+  border: 2px solid #54a7d3; /* Color de marca */
+  color: #54a7d3; /* Color de marca */
   padding: 0.5rem 2rem;
   font-size: 1.2rem;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s, color 0.3s;
   text-transform: uppercase;
   font-weight: bold;
 }
 
 .shop-button:hover {
-  background: white;
+  background: #54a7d3; /* Color de marca */
   color: black;
 }
 
@@ -118,7 +119,7 @@ h1 {
 }
 
 .top-nav button:hover {
-  background: #444;
+  background: #54a7d3; /* Color de marca */
 }
 
 .side-menu {
@@ -131,6 +132,7 @@ h1 {
   transform: translateX(-100%);
   transition: transform 0.3s ease-in-out;
   pointer-events: none;
+  z-index: 2000; /* Asegúrate de que el side-menu tenga un z-index más alto que el header */
 }
 
 .side-menu.open {
@@ -151,16 +153,14 @@ h1 {
   font-size: 1.2rem;
 }
 
-@media (max-width: 768px) {
-  .top-nav {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .top-nav button {
-    width: 80%;
-    margin-bottom: 1rem;
-  }
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1500; /* Asegúrate de que el overlay tenga un z-index entre el header y el side-menu */
 }
 
 .card-container {
@@ -192,18 +192,72 @@ h1 {
 
 .card:hover {
   transform: scale(1.05); /* Efecto de agrandar cuando se pasa el cursor */
-  background-color: #444; /* Cambia el fondo al pasar el cursor */
+  background-color: #54a7d3; /* Color de marca */
 }
 
 @media (max-width: 768px) {
+  .top-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .top-nav button {
+    width: 80%;
+    margin-bottom: 1rem;
+  }
+
   .card-container {
     flex-direction: column; /* En pantallas pequeñas, las tarjetas se apilan verticalmente */
     align-items: center;
   }
 
   .card {
-    width: 80%; /* En móviles, las tarjetas ocuparán el 80% del contenedor */
+    width: 80%; 
     margin-bottom: 1rem;
   }
 }
 
+/* Seccion de contacto e info relevante */
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  margin: 10px;
+}
+
+.footer-section h3 {
+  margin-bottom: 10px;
+  color: #54a7d3; /* Color de marca */
+}
+
+.footer-section p, .footer-section a {
+  margin: 5px 0;
+  color: white;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+.footer-section i {
+  font-size: 1.5em; 
+  margin: 0 10px; 
+}
+
+.footer-credits {
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: #aaa;
+}
