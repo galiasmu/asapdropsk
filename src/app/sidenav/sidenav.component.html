@@ -1,26 +1,65 @@
-
-  <div class="example-container" [class.example-is-mobile]="isMobile()">
-    <mat-toolbar class="example-toolbar">
-      <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
-      <h1 class="example-app-name">Responsive App</h1>
-    </mat-toolbar>
-
-    <mat-sidenav-container class="example-sidenav-container"
-                          [style.marginTop.px]="isMobile() ? 56 : 0">
-      <mat-sidenav #snav [mode]="isMobile() ? 'over' : 'side'"
-                  [fixedInViewport]="isMobile()" fixedTopGap="56">
-        <mat-nav-list>
-          @for (nav of fillerNav; track nav) {
-            <a mat-list-item>{{nav}}</a>
-          }
-        </mat-nav-list>
-      </mat-sidenav>
-
-      <mat-sidenav-content>
-        @for (content of fillerContent; track content) {
-    <p>{{content}}</p>
-  }
-      </mat-sidenav-content>
-    </mat-sidenav-container>
-  </div>
-
+<header class="navbar">
+    <nav class="menu">
+        <div class="icon-container">
+            <img src="assets/logo-marca.png" alt="Icono" class="header-icon">
+        </div>
+      <ul>
+        <li class="menu-item" (mouseenter)="openMenu(1)" (mouseleave)="closeMenu()">
+          FEAR OF GOD
+          <div class="submenu" [ngClass]="{'active': activeMenu === 1}">
+            <ul>
+              <li>NEW RELEASES</li>
+              <li>TOPS</li>
+              <li>BOTTOMS</li>
+              <li>KNITWEAR</li>
+              <li>OUTERWEAR</li>
+              <li>DENIM</li>
+              <li>SUITING</li>
+              <li>LOUNGE</li>
+              <li>FOOTWEAR</li>
+              <li>ACCESSORIES</li>
+              <li>SHOP ALL</li>
+            </ul>
+          </div>
+        </li>
+        <li class="menu-item" (mouseenter)="openMenu(2)" (mouseleave)="closeMenu()">
+          ESSENTIALS
+          <div class="submenu" [ngClass]="{'active': activeMenu === 2}">
+            <ul>
+              <li>SHOP</li>
+              <li>LOOKBOOK</li>
+            </ul>
+          </div>
+        </li>
+        <li class="menu-item" (mouseenter)="openMenu(3)" (mouseleave)="closeMenu()">
+          ATHLETICS
+          <div class="submenu" [ngClass]="{'active': activeMenu === 3}">
+            <ul>
+              <li>COLLECTION 8 SPRING 2024</li>
+              <li>SHOP</li>
+              <li>OVERVIEW</li>
+              <li>CAMPAIGN</li>
+              <li>LOOKS</li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="search-container">
+        <button class="search-button" (click)="onSearchClick()">🔍</button>
+      </div>
+  
+    <!-- Botón para abrir menú en móviles -->
+    <button class="burger-menu" (click)="toggleMobileMenu()">☰</button>
+  
+    <!-- Menú lateral en móviles -->
+    <div class="mobile-menu" [ngClass]="{'open': mobileMenuOpen}">
+      <button class="close-btn" (click)="toggleMobileMenu()">✖</button>
+      <ul>
+        <li>FEAR OF GOD</li>
+        <li>ESSENTIALS</li>
+        <li>ATHLETICS</li>
+      </ul>
+    </div>
+  </header>
+  
